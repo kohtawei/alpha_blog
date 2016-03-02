@@ -1,27 +1,57 @@
-<h1>Create an article</h1>
-<% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created</h2>
-<ul>
-<% @article.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
+<head>
+<style>
+#header {
+    background-color:#FFC125;
+    color:black;
+    text-align:center;
+    padding:5px;
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:500px;
+    width:10%;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:80%;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:#FFC125;
+    color:black;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+</style>
+</head>
+<body>
 
-<%= form_for @article do |f| %>
-<p>
-  <%= f.label :title %><br/>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %><br/>
-  <%= f.text_area :description %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+<div id="header">
+<h1>Alpha-Blog</h1>
+</div>
 
-<%= link_to "Back to articles listing", articles_path %> 
+<div id="nav">
+<!-- <%= link_to 'Home', root_path %><br>
+<%= link_to 'About', about_path %><br>
+<%= link_to 'Alpha Blog', articles_path %> -->
+</div>
+
+<div id="section">
+<h2>Create an article</h2>
+<%= render 'form' %>
+</div>
+
+<div id="footer">
+alpha-blog
+</div>
+
+</body>
+
+
+
 
 

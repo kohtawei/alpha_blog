@@ -1,18 +1,62 @@
+
+<head>
 <style>
-  table#t01 th	{
+#header {
+    background-color:#FFC125;
+    color:black;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:500px;
+    width:10%;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:80%;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:#FFC125;
+    color:black;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+table#t01 th	{
     background-color: black;
     color: white;
 }
-  table {
+table {
     width:100%;
 }
-  table, th, td {
+table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 </style>
+</head>
+<body>
 
-<h1>Listing all articles</h1>
+<div id="header">
+<h1>Alpha-Blog</h1>
+</div>
+
+<div id="nav">
+<%= link_to 'Home', root_path %><br>
+<%= link_to 'About', about_path %><br>
+<%= link_to 'Alpha Blog', articles_path %>
+</div>
+
+<div id="section">
+<h2>Listing all articles</h2>
+<p>
+<%= link_to "Create a new article", new_article_path %>
+</p>
 
 <table id="t01">
   <tr>
@@ -25,9 +69,17 @@
     <td><%= article.description %></td>
     <td><%= link_to 'Edit', edit_article_path(article) %></td>
     <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
   </tr>
   <% end %>
 
-
-
 </table>
+</div>
+
+<div id="footer">
+alpha-blog
+</div>
+
+</body>
+
+
