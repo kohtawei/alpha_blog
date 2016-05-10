@@ -14,7 +14,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
       post_via_redirect categories_path, category:{name: "sports"}
     end
     assert_template 'categories/index'
-    asset_match "sports", response.body
+    assert_match "sports", response.body
   end
   
   test "invalid category submission results in failure" do

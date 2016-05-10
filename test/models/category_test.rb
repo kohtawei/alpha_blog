@@ -18,13 +18,13 @@ class CategoryTest < ActiveSupport::TestCase
   test "name should be unique" do
     @category.save
     @category2 = Category.new(name: "sports")
-    assert_not category2.valid?
+    assert_not @category2.valid?
   end
  
 
   test "name should not be too long" do
     @category.name = "a" *26
-    assert_not category.valid?
+    assert_not @category.valid?
   end
 
   test "name should not be too short" do

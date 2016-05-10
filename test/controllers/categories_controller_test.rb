@@ -19,7 +19,7 @@ require 'test_helper'
     end
     
     test "should get show" do
-      get(:show, {'id' => category.id})
+      get(:show, {'id' => @category.id})
       assert_response :success
     end
     
